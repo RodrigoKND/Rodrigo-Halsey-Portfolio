@@ -1,0 +1,62 @@
+---
+import { geti18n } from "@/i18n/";
+import { GithubIcon } from "@/icons/";
+
+const { currentLocale } = Astro;
+const i18n = geti18n({ currentLanguage: currentLocale });
+const projects = i18n.sections.projects.projectsWork;
+---
+
+<section
+    id="projects"
+    class="py-24 w-full mx-auto container lg:max-w-4xl md:max-w-2xl px-4 text-center"
+>
+    <h2 class="mb-6 text-3xl font-semibold gap-x-3 text-white">
+        {i18n.sections.projects.title}
+    </h2>
+
+    <div class="flex flex-wrap gap-8 lg:gap-4 justify-center">
+        {
+            projects.map((project) => (
+                <div class="overflow-hidden flex flex-col items-center rounded-md md:flex-row shadow-lg bg-pink-900 transform transition duration-300 hover:scale-105">
+                    <img
+                        src={project.image}
+                        alt={project.title}
+                        loading="lazy"
+                        class="lg:w-1/2 w-full md:h-60 h-40 object-center object-cover"
+                    />
+
+                    <div class="flex flex-col w-full p-4">
+                        <h3 class="text-pink-200 text-start text-2xl font-semibold">
+                            {project.title}
+                        </h3>
+                        <p class="text-gray-300 text-start text-sm my-4">
+                            {project.description}
+                        </p>
+
+                        <div class="flex gap-3">
+                            <a
+                                href={project.code}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="bg-white flex items-center gap-x-2 text-pink-800 font-medium px-4 py-2 rounded-lg text-sm hover:bg-pink-100 transition duration-200 shadow-md"
+                            >
+                                <GithubIcon />
+                                Code
+                            </a>
+                            <a
+                                href={project.preview}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="bg-pink-600 flex items-center gap-x-2 text-white font-medium px-4 py-2 rounded-lg text-sm hover:bg-pink-500 transition duration-200 shadow-md"
+                            >
+                                <span class="material-icons-outlined text-pink-300">insert_link</span>
+                                Preview
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+</section>

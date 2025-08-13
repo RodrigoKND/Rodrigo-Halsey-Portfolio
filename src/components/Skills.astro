@@ -1,0 +1,92 @@
+---
+import { geti18n } from "@/i18n/";
+import {
+    AngularIcon,
+    HtmlIcon,
+    CppIcon,
+    ExpressIcon,
+    ReactIcon,
+    JavascriptIcon,
+    PythonIcon,
+    TailwindIcon,
+    NodeIcon,
+    MySQLIcon,
+    TypescriptIcon,
+    PostgresqlIcon,
+} from "@/icons/";
+const { currentLocale } = Astro;
+const i18n = geti18n({ currentLanguage: currentLocale });
+
+const tecnologies = [
+    {
+        name: "HTML",
+        icon: HtmlIcon,
+    },
+    {
+        name: "tailwindcss",
+        icon: TailwindIcon,
+    },
+    {
+        name: "JavaScript",
+        icon: JavascriptIcon,
+    },
+    {
+        name: "Reactjs y React Native",
+        icon: ReactIcon,
+    },
+    {
+        name: "Angular",
+        icon: AngularIcon,
+    },
+    {
+        name: "Node.js",
+        icon: NodeIcon,
+    },
+    {
+        name: "MySQL",
+        icon: MySQLIcon,
+    },
+    {
+        name: "C++",
+        icon: CppIcon,
+    },
+    {
+        name: "Express",
+        icon: ExpressIcon,
+    },
+    {
+        name: "Python",
+        icon: PythonIcon,
+    },
+    {
+        name: "Typescript",
+        icon: TypescriptIcon,
+    },
+    {
+        name: "Postgresql",
+        icon: PostgresqlIcon,
+    }
+];
+---
+
+<section
+    id="skills"
+    class="w-full mx-auto container lg:max-w-4xl md:max-w-2xl py-24 px-6"
+    id="skills"
+>
+    <h2 class="mb-6 text-3xl font-semibold gap-x-3 text-white text-center">
+        {i18n.sections.skills.title}
+    </h2>
+
+    <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6">
+        <!-- Skill -->
+        {
+            tecnologies.map((tecnologia) => (
+                <div class="flex flex-col items-center bg-pink-700 p-4 rounded-xl shadow-md hover:scale-105 transition duration-300">
+                    <tecnologia.icon />
+                    <span class="text-sm font-medium">{tecnologia.name}</span>
+                </div>
+            ))
+        }
+    </div>
+</section>

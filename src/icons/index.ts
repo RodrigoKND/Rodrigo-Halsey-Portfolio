@@ -1,0 +1,15 @@
+export {default as AngularIcon} from "@/icons/angular.astro";
+export {default as GithubIcon} from "@/icons/github.astro";
+export {default as HtmlIcon} from "@/icons/html.astro";
+export {default as CppIcon} from "@/icons/cpp.astro";
+export {default as ExpressIcon} from "@/icons/express.astro";
+export {default as ReactIcon} from "@/icons/react.astro";
+export {default as JavascriptIcon} from "@/icons/javascript.astro";
+export {default as PythonIcon} from "@/icons/python.astro";
+export {default as TailwindIcon} from "@/icons/tailwind.astro";
+export {default as NodeIcon} from "@/icons/node.astro";
+export {default as MySQLIcon} from "@/icons/mysql.astro";
+export {default as TypescriptIcon} from "@/icons/typescript.astro";
+export {default as PostgresqlIcon} from "@/icons/postgres.astro";
+export {default as USAIcon} from "@/icons/usa.astro";
+export {default as SpainIcon} from "@/icons/spain.astro";

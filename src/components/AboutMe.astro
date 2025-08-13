@@ -1,0 +1,35 @@
+---
+import { geti18n } from "@/i18n/";
+
+const { currentLocale } = Astro;
+const i18n = geti18n({ currentLanguage: currentLocale });
+const aboutMe = i18n.sections.aboutMe;
+---
+
+<section
+    id="about_me"
+    class="w-full mx-auto container lg:max-w-4xl md:max-w-2xl py-24 px-6"
+>
+    <h2 class="mb-6 text-3xl font-semibold gap-x-3 text-white text-center">
+        {aboutMe.title}
+    </h2>
+
+    <div class="flex flex-col md:flex-row items-center gap-14">
+        <!-- Imagen -->
+        <img
+            src={aboutMe.image}
+            alt={aboutMe.name}
+            loading="lazy"
+            class="max-w-md h-96 rounded-full object-cover shadow-lg border-4 border-pink-700"
+        />
+
+        <!-- Texto -->
+        <div class="text-gray-300 text-lg leading-relaxed">
+            <p class="mb-4">
+                {aboutMe.firstParagraph}
+            </p>
+            <p class="mb-4" set:html={aboutMe.secondParagraph} />
+            <p class="mb-4" set:html={aboutMe.thirtParagraph} />
+        </div>
+    </div>
+</section>

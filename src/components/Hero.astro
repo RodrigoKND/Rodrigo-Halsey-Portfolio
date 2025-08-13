@@ -1,0 +1,68 @@
+---
+import { fade } from "astro:transitions";
+import { geti18n } from "@/i18n/";
+
+const { currentLocale } = Astro;
+const i18n = geti18n({ currentLanguage: currentLocale });
+const { hero } = i18n.sections;
+const emailContact = "rodrigopacheco965@gmail.com";
+---
+
+<section
+    id="hero"
+    transition:animate={fade({ duration: "0.4s" })}
+    class="relative min-h-[calc(100vh-100px)] md:pb-16 flex items-center justify-center overflow-hidden"
+>
+    <div class="text-center z-10 p-4 max-w-4xl mx-auto">
+        <div class="flex justify-center my-4">
+            <a
+                href=`mailto:${emailContact}`
+                target="_blank"
+                class="relative inline-flex overflow-hidden rounded-full p-[1px]"
+            >
+                <span
+                    class="absolute inset-[-1000%] [animation:border_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#51E4B8_0%,#21554E_50%,#51E4B8_100%)]"
+                ></span>
+                <div
+                    class="inline-flex items-center justify-center w-full px-3 py-1 text-sm text-green-800 rounded-full cursor-pointer bg-pink-800 dark:text-white/80 backdrop-blur-3xl whitespace-nowrap"
+                >
+                    {i18n.statusWork}
+                </div>
+            </a>
+        </div>
+        <h1
+            class="text-4xl md:text-6xl font-extrabold leading-tight mb-4 drop-shadow-lg"
+            set:html={hero.title}
+        />
+        <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+            {hero.description}
+        </p>
+        <div class="flex gap-4 justify-center items-center">
+            <a
+                href=`mailto:${emailContact}`
+                target="_blank"
+                id="contact"
+                class="bg-pink-800 text-orange-100 hover:bg-pink-900 hover:text-orange-200 transition-all duration-300 shadow-lg md:text-lg text-sm px-8 py-2 rounded-full"
+            >
+                {hero.buttons.contact}
+            </a>
+            <a
+                href="/cv.pdf"
+                download="CV - Rodrigo Pacheco Halsey.pdf"
+                class="border text-pink-100 hover:text-pink-300 transition-all duration-300 shadow-lg md:text-lg px-8 py-2 rounded-full text-sm"
+            >
+                {hero.buttons.cv}
+            </a>
+        </div>
+    </div>
+</section>
+<style>
+    @keyframes border {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+</style>

@@ -1,0 +1,179 @@
+---
+import { geti18n } from "@/i18n/";
+import { USAIcon, SpainIcon } from "@/icons/";
+
+const { currentLocale } = Astro;
+const i18n = geti18n({ currentLanguage: currentLocale });
+const key = i18n.navbar;
+const optionsNavbar = [
+    {
+        key: key.experience.key,
+        text: key.experience.value,
+    },
+    {
+        key: key.projects.key,
+        text: key.projects.value,
+    },
+    {
+        key: key.skills.key,
+        text: key.skills.value,
+    },
+    {
+        key: key.aboutMe.key,
+        text: key.aboutMe.value,
+    },
+] as const;
+// Idiomas disponibles
+const languages = [
+    { code: "es", label: i18n.selectLanguage.es, href: "/", flag: SpainIcon },
+    { code: "en", label: i18n.selectLanguage.en, href: "/en", flag: USAIcon },
+];
+
+const activeLanguages = languages.find((l) => l.code === currentLocale);
+const FlagComponent = activeLanguages?.flag;
+---
+
+<header class="px-8 pt-6 pb-4 sticky top-0 z-50 backdrop-blur-md">
+    <menu>
+        <nav class="flex justify-between items-center">
+            <ul class="hidden md:flex gap-6">
+                {
+                    optionsNavbar.map((option) => (
+                        <li class="relative inline-block group hover:text-[#00e4b6]">
+                            <a href={`#${option.key}`} class="nav-link">
+                                <span class="absolute left-0 bottom-0 h-[2px] w-0 bg-[#00e4b6] transition-all duration-300 group-hover:w-full" />
+                                {option.text}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+            <div
+                class="flex justify-between md:justify-end items-center logo_container w-full md:w-auto"
+            >
+                <div class="relative inline-block text-left">
+                    <button
+                        class="inline-flex justify-center items-center cursor-pointer gap-2 px-4 py-2 bg-transparent border border-white text-white rounded-md"
+                        id="lang-button"
+                        name="language"
+                        onclick="document.getElementById('lang-menu').classList.toggle('hidden')"
+                    >
+                        {FlagComponent && <FlagComponent />}
+                        {activeLanguages?.label} ▼
+                    </button>
+
+                    <div
+                        id="lang-menu"
+                        class="absolute md:right-0 rigth-5 mt-2 w-auto rounded-md shadow-lg bg-pink-500 ring-opacity-5 hidden z-50"
+                    >
+                        <div class="py-1 text-white">
+                            {
+                                languages.map((lang) => (
+                                    <a
+                                        href={lang.href}
+                                        class="flex items-center gap-x-4 px-4 py-2 hover:bg-pink-400"
+                                    >
+                                        <lang.flag />
+                                        {lang.label}
+                                    </a>
+                                ))
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="flex md:ms-4">
+                    <a
+                        href="#hero"
+                        title="Welcome!"
+                        class="h-6 w-6 bg-pink-500 rounded-full border logo cursor-pointer border-green-300 transition"
+                    >
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </menu>
+</header>
+
+<script>
+    import { keys, optionsObserver as options } from "../constants/observer";
+    document.addEventListener("astro:page-load", () => {
+        const logo_container = document.querySelector(".logo_container");
+        const logo = logo_container?.querySelector(".logo");
+        const links = document.querySelectorAll(".nav-link");
+
+        function setUpLinks() {
+            links.forEach((link) => {
+                const hash = window.location.hash;
+                if (link.getAttribute("href") === `#${hash.slice(1)}`) {
+                    link.classList.add("nav-link");
+                } else {
+                    link.classList.remove("nav-link");
+                }
+            });
+        }
+
+        window.addEventListener("popstate", setUpLinks);
+        setUpLinks();
+
+        type typePaintLinks = "add" | "remove";
+        function paintLinksObserver(
+            entry: IntersectionObserverEntry,
+            type: typePaintLinks = "add",
+        ) {
+            const typeLinkActions = ["add", "remove"];
+            links.forEach((link) => {
+                const href = link.getAttribute("href");
+                const target = entry.target as HTMLElement;
+                if (href === `#${target.id}` && type === typeLinkActions[0]) {
+                    link.classList.add("nav-link");
+                }
+                if (href === `#${target.id}` && type === typeLinkActions[1]) {
+                    link.classList.remove("nav-link");
+                }
+            });
+        }
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                const keyObj = keys.find((k) => k.key === entry.target.id);
+                if (!keyObj) return;
+
+                const iconSelector = keyObj.icon.match(/icon-[\w-]+/)?.[0];
+                const existingIcon = logo_container?.querySelector(
+                    `.${iconSelector}`,
+                );
+
+                if (entry.isIntersecting) {
+                    if (!existingIcon) {
+                        logo?.insertAdjacentHTML("afterend", keyObj.icon);
+                        paintLinksObserver(entry, "add");
+                    }
+                }
+
+                if (existingIcon) {
+                    existingIcon.remove();
+                    paintLinksObserver(entry, "remove");
+                }
+            });
+
+            // Si hay al menos un icono visible, agregar clase, sino removerla
+            const anyIconVisible =
+                logo_container?.querySelector("span[class^='icon-']") !== null;
+            logo?.classList.toggle("-translate-x-1", anyIconVisible);
+        }, options);
+
+        keys.forEach((k) => {
+            const target = document.querySelector(`#${k.key}`);
+            if (!target) return;
+            observer.observe(target);
+        });
+    });
+</script>
+
+<style>
+    .nav-link {
+        color: #00e4b6;
+        border-bottom: 2px solid #00e4b6;
+        transition: all 0.5s ease-in-out;
+    }
+</style>

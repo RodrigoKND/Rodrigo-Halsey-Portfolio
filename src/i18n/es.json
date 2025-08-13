@@ -1,0 +1,97 @@
+{
+    "seoTitle": "Portafolio | Rodrigo Halsey",
+    "seoDescription": "Gané ferias tecnológicas, impartí clases de programación, he desarrollado sistemas inteligentes y estudio actualmente redes Cisco. Rodrigo Halsey – Desarrollador Full Stack enfocado en soluciones prácticas.",
+    "navbar": {
+        "experience": {
+            "key": "experience",
+            "value": "Experiencia"
+        },
+        "projects": {
+            "key": "projects",
+            "value": "Proyectos"
+        },
+        "skills": {
+            "key": "skills",
+            "value": "Habilidades"
+        },
+        "aboutMe": {
+            "key": "about_me",
+            "value": "Sobre mí"
+        }
+    },
+    "selectLanguage": {
+        "es": "Español",
+        "en": "Inglés"
+    },
+    "statusWork": "Disponible para trabajar",
+    "sections": {
+        "hero": {
+            "title": "<span class='block'>Hola, soy <span class='text-[#00e4b6]'>Rodrigo Halsey</span></span>",
+            "description": "Desarrollador full stack, apasionado por la ingeniería. Me gusta entender cómo funcionan las cosas y crear soluciones que optimicen el tiempo de las personas.",
+            "buttons": {
+                "contact": "Contáctame",
+                "cv": "Descargar CV"
+            }
+        },
+        "experience": {
+            "title": "Experiencia laboral",
+            "jobs": [
+                {
+                    "title": "Freelancer",
+                    "subtitle": "Personal",
+                    "time": "Actualmente",
+                    "description": "Me dedico a crear sistemas personalizados según las necesidades de cada cliente, ofreciendo soluciones prácticas, eficientes y escalables. También desarrollo proyectos personales para experimentar, innovar y mantenerme actualizado en el mundo tecnológico."
+                },
+                {
+                    "title": "G.A.M",
+                    "subtitle": "Desarrollador para entidad pública",
+                    "time": "Julio 2025",
+                    "description": "Participé como programador en el desarrollo de interfaces específicas dentro de un proyecto universitario      orientado a cubrir un problema social para la gobernación autónoma departamental de Cochabamba - Bolivia. Mi aporte incluyó el diseño y la implementación de partes clave del sistema (backend y control de api's), trabajando en equipo bajo lineamientos académicos y reales."
+                },
+                {
+                    "title": "Líder de desarrollo Tiendas Axcel",
+                    "subtitle": "Tiendas Axcel",
+                    "time": "Mayo 2025",
+                    "description": "Lideré el equipo de desarrollo del sistema de ventas para la tienda de dispositivos electrónicos Axcel."
+                }
+            ]
+        },
+        "projects": {
+            "title": "Mis Proyectos",
+            "projectsWork": [
+                {
+                    "title": "Sistema de Ventas | Tiendas Axcel",
+                    "code":"https://github.com/alisontamar/workv2",
+                    "preview": "https://axcel-tc-productos-homologados.vercel.app/",
+                    "image": "/axcel.webp",
+                    "description": "Desarrollé funcionalidades clave, lideré el equipo, gestioné la base de datos en Supabase y conecté interfaces con la base."
+                },
+                {
+                    "title": "Lugabiz",
+                    "code":"https://github.com/RodrigoKND/lugabizOffcial",
+                    "preview": "https://lugabiz.vercel.app/",
+                    "image": "/lugabiz.webp",
+                    "description": "Plataforma comunitaria para descubrir y compartir lugares cotidianos de la ciudad."
+                },
+                {
+                    "title": "HomeMart",
+                    "code":"https://github.com/RodrigoKND/homemart",
+                    "preview": "https://homemart-two.vercel.app/",
+                    "image": "/homemart.webp",
+                    "description": "Diseñé y desarrollé un catálogo digital que facilita la visualización y gestión de productos, mejorando la experiencia de búsqueda y compra."
+                }
+            ]
+        },
+        "skills": {
+            "title": "Habilidades"
+        },
+        "aboutMe": {
+            "title": "Sobre mí",
+            "name": "Rodrigo Pacheco Halsey",
+            "image": "/profile.webp",
+            "firstParagraph": "¡Hola! mi nombre es Rodrigo Pacheco Halsey. Me gusta crear sistemas que resuelvan problemas reales y que tengan impacto.",
+            "secondParagraph": "Algunos de mis logros incluyen haber ganado ferias de tecnología organizadas por la Universidad Franz Tamayo, así como haber sido auxiliar en las materias de <strong class='text-green-300'>Estructura de Datos</strong> y <strong class='text-green-300'>Programación</strong>. Siempre estoy en constante búsqueda de aprendizaje, perfeccionando mis habilidades y explorando nuevas tecnologías.",
+            "thirtParagraph": "Actualmente estoy cursando la capacitación de Cisco para obtener la <strong class='text-green-300'>certificación CCNA</strong> y me encuentro en el quinto semestre de la universidad. Estoy enfocado en seguir creciendo como desarrollador, participando en   proyectos personales y colaborativos. Si tienes una idea o proyecto, <strong class='text-green-300'>¡me encantaría ayudarte a hacerlo realidad!</strong>"
+        }
+    }
+}

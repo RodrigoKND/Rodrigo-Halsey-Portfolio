@@ -1,0 +1,28 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Navbar from "@/components/Navbar.astro";
+import Hero from "@/components/Hero.astro";
+import Experience from "@/components/Experience.astro";
+import Projects from "@/components/Projects.astro";
+import Skills from "@/components/Skills.astro";
+import AboutMe from "@/components/AboutMe.astro";
+import ButtonUp from "@/components/ButtonUp.astro";
+import { geti18n } from "@/i18n/";
+
+const { currentLocale } = Astro;
+const i18n = geti18n({ currentLanguage: currentLocale });
+---
+
+<Layout title={i18n.seoTitle} description={i18n.seoDescription}>
+    <main
+        class="bg-[radial-gradient(ellipse_at_top_right,_#f48fb1,_#f06292,_#ad1457)] text-white"
+    >
+        <Navbar />
+        <Hero />
+        <Experience />
+        <Projects />
+        <Skills />
+        <AboutMe />
+        <ButtonUp />
+    </main>
+</Layout>
