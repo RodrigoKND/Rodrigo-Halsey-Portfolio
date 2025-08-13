@@ -20,14 +20,12 @@ const aboutMe = i18n.sections.aboutMe;
             src={aboutMe.image}
             alt={aboutMe.name}
             loading="lazy"
-            class="max-w-md h-96 rounded-full object-cover shadow-lg border-4 border-pink-700"
+            class="max-w-md h-96 rounded-full object-cover shadow-lg border-4 border-green-300"
         />
 
         <!-- Texto -->
         <div class="text-gray-300 text-lg leading-relaxed">
-            <p class="mb-4">
-                {aboutMe.firstParagraph}
-            </p>
+            <p class="mb-4" set:html={aboutMe.firstParagraph} />
             <p class="mb-4" set:html={aboutMe.secondParagraph} />
             <p class="mb-4" set:html={aboutMe.thirtParagraph} />
         </div>

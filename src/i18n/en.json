@@ -89,7 +89,7 @@
             "title": "About Me",
             "name": "Rodrigo Pacheco Halsey",
             "image": "/profile.webp",
-            "firstParagraph": "Hi! My name is Rodrigo Pacheco Halsey. I enjoy creating systems that solve real problems and make an impact.",
+            "firstParagraph": "Hi! My name is Rodrigo Pacheco Halsey, <strong class='text-green-300'>i'm a commercial engineer and systems engineer</strong>.  I enjoy creating systems that solve real problems and make an impact.",
             "secondParagraph": "Some of my achievements include winning tech fairs organized by Franz Tamayo University and working as a teaching assistant in <strong class='text-green-300'>Data Structures</strong> and <strong class='text-green-300'>Programming</strong>. I'm always seeking to improve my skills and explore new technologies.",
             "thirtParagraph": "I'm currently taking Cisco training to earn my <strong class='text-green-300'>CCNA certification</strong> and I'm in my fifth semester at university. I'm focused on growing as a developer by working on personal and collaborative projects. If you have an idea or project, <strong class='text-green-300'>I’d love to help you bring it to life!</strong>"
         }

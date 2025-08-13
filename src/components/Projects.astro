@@ -15,15 +15,15 @@ const projects = i18n.sections.projects.projectsWork;
         {i18n.sections.projects.title}
     </h2>
 
-    <div class="flex flex-wrap gap-8 lg:gap-4 justify-center">
+    <div class="flex flex-wrap gap-8 lg:gap-6 justify-center">
         {
             projects.map((project) => (
-                <div class="overflow-hidden flex flex-col items-center rounded-md md:flex-row shadow-lg bg-pink-900 transform transition duration-300 hover:scale-105">
+                <div class="overflow-hidden flex flex-col items-center rounded-md md:flex-row shadow-xl bg-pink-700 transform transition duration-300 hover:scale-105">
                     <img
                         src={project.image}
                         alt={project.title}
                         loading="lazy"
-                        class="lg:w-1/2 w-full md:h-60 h-40 object-center object-cover"
+                        class="lg:w-1/2 w-full md:h-auto h-40 object-top object-contain"
                     />
 
                     <div class="flex flex-col w-full p-4">
