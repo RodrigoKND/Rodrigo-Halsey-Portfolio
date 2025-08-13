@@ -9,6 +9,7 @@ export default defineConfig({
     plugins: [tailwindcss()]
   },
   base: '/',
+  site: 'https://rodrigo-halsey.vercel.app',
   i18n: {
     locales: ['es', 'en'],
     defaultLocale: 'es',
