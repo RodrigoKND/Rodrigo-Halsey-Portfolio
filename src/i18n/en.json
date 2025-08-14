@@ -63,21 +63,21 @@
                     "title": "Sales System | Stores Axcel",
                     "code": "https://github.com/alisontamar/workv2",
                     "preview": "https://axcel-tc-productos-homologados.vercel.app/",
-                    "image": "/axcel.webp",
+                    "image": "https://ik.imagekit.io/ov5b34jiy/portfolio/axcel.webp?updatedAt=1755188611134",
                     "description": "I developed key functionalities, led the team, managed the database in Supabase, and connected interfaces to the database."
                 },
                 {
                     "title": "Lugabiz",
                     "code": "https://github.com/RodrigoKND/lugabizOffcial",
                     "preview": "https://lugabiz.vercel.app/",
-                    "image": "/lugabiz.webp",
+                    "image": "https://ik.imagekit.io/ov5b34jiy/portfolio/lugabiz.webp?updatedAt=1755188651008",
                     "description": "A community platform to discover and share everyday places in the city."
                 },
                 {
                     "title": "HomeMart",
                     "code": "https://github.com/RodrigoKND/homemart",
                     "preview": "https://homemart-two.vercel.app/",
-                    "image": "/homemart.webp",
+                    "image": "https://ik.imagekit.io/ov5b34jiy/portfolio/homemart.webp?updatedAt=1755188633670",
                     "description": "I designed and developed a digital catalog that simplifies product browsing and management, enhancing the shopping and search experience."
                 }
             ]
