@@ -88,7 +88,7 @@
         "aboutMe": {
             "title": "Sobre mí",
             "name": "Rodrigo Pacheco Halsey",
-            "image": "/profile.webp",
+            "image": "https://ik.imagekit.io/ov5b34jiy/portfolio/profile.webp?updatedAt=1755189518819",
             "firstParagraph": "¡Hola! mi nombre es Rodrigo Pacheco Halsey, <strong class='text-green-300'>soy ingeniero comercial e ingeniero de sistemas</strong>. Me gusta crear sistemas que resuelvan problemas reales y que tengan impacto.",
             "secondParagraph": "Algunos de mis logros incluyen haber ganado ferias de tecnología organizadas por la Universidad Franz Tamayo, así como haber sido auxiliar en las materias de <strong class='text-green-300'>Estructura de Datos</strong> y <strong class='text-green-300'>Programación</strong>. Siempre estoy en constante búsqueda de aprendizaje, perfeccionando mis habilidades y explorando nuevas tecnologías.",
             "thirtParagraph": "Actualmente estoy cursando la capacitación de Cisco para obtener la <strong class='text-green-300'>certificación CCNA</strong> y me encuentro en el quinto semestre de la universidad. Estoy enfocado en seguir creciendo como desarrollador, participando en   proyectos personales y colaborativos. Si tienes una idea o proyecto, <strong class='text-green-300'>¡me encantaría ayudarte a hacerlo realidad!</strong>"
