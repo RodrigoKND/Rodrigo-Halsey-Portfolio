@@ -8,6 +8,7 @@ import Skills from "@/components/Skills.astro";
 import AboutMe from "@/components/AboutMe.astro";
 import ButtonUp from "@/components/ButtonUp.astro";
 import { geti18n } from "@/i18n/";
+import Analytics from '@vercel/analytics/astro';
 
 const { currentLocale } = Astro;
 const i18n = geti18n({ currentLanguage: currentLocale });
@@ -24,5 +25,6 @@ const i18n = geti18n({ currentLanguage: currentLocale });
         <Skills />
         <AboutMe />
         <ButtonUp />
+        <Analytics />
     </main>
 </Layout>
