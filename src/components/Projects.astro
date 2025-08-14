@@ -18,12 +18,12 @@ const projects = i18n.sections.projects.projectsWork;
     <div class="flex flex-wrap gap-8 lg:gap-6 justify-center">
         {
             projects.map((project) => (
-                <div class="overflow-hidden flex flex-col items-center rounded-md md:flex-row shadow-xl bg-pink-700 transform transition duration-300 hover:scale-105">
+                <div class="overflow-hidden flex flex-col items-center rounded-md lg:flex-row shadow-xl bg-pink-700 transform transition duration-300 hover:scale-105">
                     <img
                         src={project.image}
                         alt={project.title}
                         loading="lazy"
-                        class="lg:w-1/2 w-full md:h-auto h-40 object-top object-contain"
+                        class="lg:w-1/2 w-full md:h-auto h-40 object-top lg:object-contain object-cover"
                     />
 
                     <div class="flex flex-col w-full p-4">
